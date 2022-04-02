@@ -42,6 +42,7 @@ export function proxy (target: Object, sourceKey: string, key: string) {
   }
   sharedPropertyDefinition.set = function proxySetter (val) {
     this[sourceKey][key] = val
+
   }
   Object.defineProperty(target, key, sharedPropertyDefinition)
 }
